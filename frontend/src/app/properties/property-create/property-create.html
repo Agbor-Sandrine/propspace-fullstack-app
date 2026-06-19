@@ -1,0 +1,70 @@
+<div class="form-container">
+
+  <h2>Add Property</h2>
+
+  <form (ngSubmit)="createProperty()">
+
+    <input
+      type="text"
+      placeholder="Property Title"
+      [(ngModel)]="property.title"
+      name="title"
+      required
+    />
+
+    <textarea
+      placeholder="Description"
+      [(ngModel)]="property.description"
+      name="description"
+      required
+    ></textarea>
+
+    <input
+      type="text"
+      placeholder="City"
+      [(ngModel)]="property.city"
+      name="city"
+      required
+    />
+
+    <input
+      type="text"
+      placeholder="Country"
+      [(ngModel)]="property.country"
+      name="country"
+      required
+    />
+
+    <input
+      type="number"
+      placeholder="Price"
+      [(ngModel)]="property.price"
+      name="price"
+      required
+    />
+
+    <select
+      [(ngModel)]="property.propertyType"
+      name="propertyType"
+    >
+      <option value="house">House</option>
+      <option value="apartment">Apartment</option>
+      <option value="villa">Villa</option>
+      <option value="land">Land</option>
+    </select>
+
+    <button type="submit">
+      Add Property
+    </button>
+
+  </form>
+
+  <p class="success">
+    {{ successMessage }}
+  </p>
+
+  <p class="error">
+    {{ errorMessage }}
+  </p>
+
+</div>

@@ -4,21 +4,45 @@ const router = express.Router();
 const authMiddleware = require("../middleware/authMiddleware");
 const propertyController = require("../controllers/propertyController");
 
-// PUBLIC ROUTE
+
+// =========================
+// PUBLIC ROUTES
+// =========================
+
+// Get all properties
 router.get("/", propertyController.getAllProperties);
 
+
+// =========================
 // PROTECTED ROUTES
-router.post("/", authMiddleware, propertyController.createProperty);
+// =========================
 
-router.get("/my", authMiddleware, propertyController.getMyProperties);
+// Create property
+router.post(
+  "/",
+  authMiddleware,
+  propertyController.createProperty
+);
 
-router.put("/:id", authMiddleware, propertyController.updateProperty);
+// Get my properties
+router.get(
+  "/my",
+  authMiddleware,
+  propertyController.getMyProperties
+);
 
-router.delete("/:id", authMiddleware, propertyController.deleteProperty);
+// Update property
+router.put(
+  "/:id",
+  authMiddleware,
+  propertyController.updateProperty
+);
+
+// Delete property
+router.delete(
+  "/:id",
+  authMiddleware,
+  propertyController.deleteProperty
+);
 
 module.exports = router;
-router.get("/", propertyController.getAllProperties);
-router.get("/my", authMiddleware, propertyController.getMyProperties);
-router.post("/", authMiddleware, propertyController.createProperty);
-router.put("/:id", authMiddleware, propertyController.updateProperty);
-router.delete("/:id", authMiddleware, propertyController.deleteProperty);

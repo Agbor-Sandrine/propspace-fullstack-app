@@ -1,0 +1,45 @@
+<div class="auth-container">
+
+  <div class="auth-card">
+
+    <h2>Create Account</h2>
+
+    <p class="subtitle">
+      Register to continue
+    </p>
+
+    <form (ngSubmit)="register()">
+
+      <input
+        type="text"
+        placeholder="Username"
+        [(ngModel)]="user.username"
+        name="username"
+        required
+      >
+
+      <input
+        type="email"
+        placeholder="Email Address"
+        [(ngModel)]="user.email"
+        name="email"
+        required
+      >
+
+      <input
+        type="password"
+        placeholder="Password"
+        [(ngModel)]="user.password"
+        name="password"
+        required
+      >
+
+      <button type="submit">
+        Register
+      </button>
+
+    </form>
+
+  </div>
+
+</div>

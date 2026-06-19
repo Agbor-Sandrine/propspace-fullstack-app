@@ -1,0 +1,27 @@
+<div class="properties-container">
+
+  <h2>My Properties</h2>
+
+  <div
+    class="property-card"
+    *ngFor="let property of myProperties"
+  >
+
+    <h3>{{ property.title }}</h3>
+
+    <p>{{ property.city }}, {{ property.country }}</p>
+
+    <p>{{ property.price }} FCFA</p>
+
+    <p>{{ property.propertyType }}</p>
+
+    <button
+      class="delete-btn"
+      (click)="deleteProperty(property._id)"
+    >
+      Delete
+    </button>
+
+  </div>
+
+</div>
